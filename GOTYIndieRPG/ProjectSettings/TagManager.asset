@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Warp
   - Flipper
+  - ForPause
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Under Background
+    uniqueID: 3077327425
+    locked: 0
+  - name: Background
+    uniqueID: 2458544945
+    locked: 0
+  - name: Foreground
+    uniqueID: 2336481337
+    locked: 0
+  - name: UI
+    uniqueID: 351316491
     locked: 0
