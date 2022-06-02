@@ -36,13 +36,13 @@ public class Player : MonoBehaviour
 		if (collision.gameObject.tag == "Enemy")
 		{
 			SceneManager.LoadScene("Battle");
-			onSceneLoad();
+			//onSceneLoad();
 			transform.position = new Vector2(0, 0);
 		}
 		else if (collision.gameObject.tag == "Warp")
 		{
 			SceneManager.LoadScene("Overworld");
-			onSceneLoad();
+			//onSceneLoad();
 			Vector2 newPosition = new Vector2(lastPosition.x + 3, lastPosition.y);
 			transform.position = newPosition;
 		}
@@ -56,19 +56,6 @@ public class Player : MonoBehaviour
 			{
 				SR.flipY = true;
 			}
-		}
-	}
-
-
-	//this is awful and also doesn't work
-	private void onSceneLoad()
-	{
-		Debug.Log(SceneManager.GetActiveScene().name.ToString());
-		GameObject[] toMove;
-		toMove = GameObject.FindGameObjectsWithTag("Player");
-		foreach (GameObject g in toMove)
-		{
-			SceneManager.MoveGameObjectToScene(g, SceneManager.GetActiveScene());
 		}
 	}
 }
