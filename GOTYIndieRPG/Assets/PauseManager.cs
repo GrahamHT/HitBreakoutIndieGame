@@ -15,20 +15,6 @@ public class PauseManager : MonoBehaviour
 	GameObject[] pauseObjects;
 	GameObject pauseScreen;
 
-	//Without this DontDestroyOnLoad isn't called until you pause once. I don't know if that would actually be a problem or not.
-	void Awake()
-	{
-		if (instance == null)
-		{
-			instance = this;
-			DontDestroyOnLoad(gameObject);
-		}
-		else if (instance != this)
-		{
-			Destroy(this.gameObject);
-			return;
-		}
-	}
 	void Start()
     {
 		pauseObjects = GameObject.FindGameObjectsWithTag("ForPause");
