@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
 	private SpriteRenderer SR;
 
 	public string charName = "Pepeg";
-	public int MaxHP = 50;
+	public int maxHP = 50;
 	public int currentHP = 50;
 	public int blood = 35;
 

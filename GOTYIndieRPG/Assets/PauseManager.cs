@@ -1,18 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
 	public Player p;
+	public PauseManager instance;
+	public Text charNameText;
+	//public Text currentHealthText;
+	//public Text maxHealthText;
+	//public Text bloodText;
+
 	GameObject[] pauseObjects;
 	GameObject pauseScreen;
+
+	//Without this DontDestroyOnLoad isn't called until you pause once. I don't know if that would actually be a problem or not.
+	void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else if (instance != this)
+		{
+			Destroy(this.gameObject);
+			return;
+		}
+	}
 	void Start()
     {
-		//p = GameObject.Find("Player").GetComponent<Player>();
-		//pauseScreen = Instantiate(Resources.Load("PauseScreen")) as GameObject;
 		pauseObjects = GameObject.FindGameObjectsWithTag("ForPause");
-		DontDestroyOnLoad(this);
+		pause();
 	}
 
 	// Update is called once per frame
@@ -37,11 +57,15 @@ public class PauseManager : MonoBehaviour
 		{
 			Time.timeScale = 0f;
 			AudioListener.pause = true;
+			//charNameText.text = p.charName;
+			//currentHealthText.text = p.currentHP.ToString();
+			//maxHealthText.text = p.maxHP.ToString();
+			//bloodText.text = p.blood.ToString();
+
 			foreach (GameObject g in pauseObjects)
 			{
 				g.SetActive(true);
 			}
-			//pauseScreen.transform.position = Camera.main.transform.position;
 		}
 		else
 		{
