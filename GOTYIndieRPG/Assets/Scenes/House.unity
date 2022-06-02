@@ -19364,7 +19364,7 @@ GameObject:
   - component: {fileID: 465373399}
   m_Layer: 0
   m_Name: WarpManager
-  m_TagString: Manager
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19382,7 +19382,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1884533785}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &465373399
 MonoBehaviour:
@@ -19886,7 +19886,7 @@ GameObject:
   - component: {fileID: 899632034}
   m_Layer: 0
   m_Name: PauseManager
-  m_TagString: Manager
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19906,6 +19906,7 @@ MonoBehaviour:
   p: {fileID: 1450816319}
   instance: {fileID: 0}
   charNameText: {fileID: 0}
+  SSC: {fileID: 1778558011}
 --- !u!4 &899632035
 Transform:
   m_ObjectHideFlags: 0
@@ -19919,7 +19920,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1884533785}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1051186590
 GameObject:
@@ -20648,6 +20649,7 @@ GameObject:
   - component: {fileID: 1450816322}
   - component: {fileID: 1450816323}
   - component: {fileID: 1450816319}
+  - component: {fileID: 1450816324}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -20787,6 +20789,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1450816324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450816318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2150ba24b0e8369449a612e830bcd4d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p: {fileID: 1450816319}
+  speed: {x: 3, y: 3}
 --- !u!1 &1545271583
 GameObject:
   m_ObjectHideFlags: 0
@@ -20832,52 +20848,6 @@ Transform:
   m_Father: {fileID: 1802826443}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1709160589
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1709160590}
-  - component: {fileID: 1709160591}
-  m_Layer: 0
-  m_Name: InputManager
-  m_TagString: Manager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1709160590
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709160589}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.49571562, y: -0.21937281, z: 0.026388168}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1884533785}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1709160591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709160589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2150ba24b0e8369449a612e830bcd4d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  p: {fileID: 1450816319}
-  speed: {x: 3, y: 3}
 --- !u!1 &1778558006
 GameObject:
   m_ObjectHideFlags: 0
@@ -20992,12 +20962,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1778558006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98becc6b50ca3924299c5985c7a4cf39, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e3589e29c55bb7438f53f06e9b5854a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p: {fileID: 1450816319}
-  instance: {fileID: 0}
-  charNameText: {fileID: 2021693187}
 --- !u!1 &1802826442
 GameObject:
   m_ObjectHideFlags: 0
@@ -21063,9 +21030,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1922785272}
-  - {fileID: 899632035}
-  - {fileID: 1709160590}
   - {fileID: 465373398}
+  - {fileID: 899632035}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24783,7 +24749,7 @@ GameObject:
   - component: {fileID: 1922785271}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Manager
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25057,7 +25023,7 @@ GameObject:
   - component: {fileID: 2021693187}
   m_Layer: 5
   m_Name: yrrytyh
-  m_TagString: Untagged
+  m_TagString: ForPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

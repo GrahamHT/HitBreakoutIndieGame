@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInputManager : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 	public Player p;
-	public Vector2 speed = new Vector2(6,6);
+	public Vector2 speed = new Vector2(3,3);
 	private void Start()
 	{
 		//p = GameObject.Find("Player").GetComponent<Player>();

@@ -8,12 +8,10 @@ public class PauseManager : MonoBehaviour
 	public Player p;
 	public PauseManager instance;
 	public Text charNameText;
+	public StatusScreenController SSC;
 	//public Text currentHealthText;
 	//public Text maxHealthText;
 	//public Text bloodText;
-
-	GameObject[] pauseObjects;
-	GameObject pauseScreen;
 
 	//Without this DontDestroyOnLoad isn't called until you pause once. I don't know if that would actually be a problem or not.
 	void Awake()
@@ -21,7 +19,7 @@ public class PauseManager : MonoBehaviour
 		if (instance == null)
 		{
 			instance = this;
-			DontDestroyOnLoad(gameObject);
+			DontDestroyOnLoad(instance);
 		}
 		else if (instance != this)
 		{
@@ -31,7 +29,6 @@ public class PauseManager : MonoBehaviour
 	}
 	void Start()
     {
-		pauseObjects = GameObject.FindGameObjectsWithTag("ForPause");
 		pause();
 	}
 
@@ -55,26 +52,11 @@ public class PauseManager : MonoBehaviour
 	{
 		if (p.isPaused)
 		{
-			Time.timeScale = 0f;
-			AudioListener.pause = true;
-			//charNameText.text = p.charName;
-			//currentHealthText.text = p.currentHP.ToString();
-			//maxHealthText.text = p.maxHP.ToString();
-			//bloodText.text = p.blood.ToString();
-
-			foreach (GameObject g in pauseObjects)
-			{
-				g.SetActive(true);
-			}
+			SSC.ShowPauseObjects();
 		}
 		else
 		{
-			Time.timeScale = 1;
-			AudioListener.pause = false;
-			foreach (GameObject g in pauseObjects)
-			{
-				g.SetActive(false);
-			}
+			SSC.HidePauseObjects();
 		}
 	}
 }

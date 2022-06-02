@@ -10,7 +10,7 @@ public class WarpManager : MonoBehaviour
 
 	private void Start()
 	{
-		DontDestroyOnLoad(this);
+
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
