@@ -6,30 +6,11 @@ using UnityEngine.UI;
 public class PauseManager : MonoBehaviour
 {
 	public Player p;
-	public PauseManager instance;
-	public Text charNameText;
 	public StatusScreenController SSC;
-	//public Text currentHealthText;
-	//public Text maxHealthText;
-	//public Text bloodText;
 
-	//Without this DontDestroyOnLoad isn't called until you pause once. I don't know if that would actually be a problem or not.
-	void Awake()
-	{
-		if (instance == null)
-		{
-			instance = this;
-			DontDestroyOnLoad(instance);
-		}
-		else if (instance != this)
-		{
-			Destroy(this.gameObject);
-			return;
-		}
-	}
 	void Start()
     {
-		pause();
+
 	}
 
 	// Update is called once per frame
