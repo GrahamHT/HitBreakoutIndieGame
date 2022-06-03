@@ -33,8 +33,8 @@ public class StatusScreenController : MonoBehaviour
 		Time.timeScale = 0f;
 		AudioListener.pause = true;
 		charNameText.text = p.charName;
-		currentHealthText.text = p.currentHP.ToString();
-		maxHealthText.text = p.maxHP.ToString();
+		currentHealthText.text = p.currentHP.ToString() + "/" + p.maxHP.ToString();
+		//maxHealthText.text = p.maxHP.ToString();
 		bloodText.text = p.blood.ToString();
 
 		foreach (GameObject g in pauseObjects)
