@@ -19532,7 +19532,6 @@ GameObject:
   - component: {fileID: 532723219}
   - component: {fileID: 532723218}
   - component: {fileID: 532723217}
-  - component: {fileID: 532723220}
   m_Layer: 5
   m_Name: ResetButton
   m_TagString: ForPause
@@ -19655,18 +19654,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532723215}
   m_CullTransparentMesh: 1
---- !u!114 &532723220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532723215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d862cc3fc2efb734cb9d88c83e4f0f23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &581901767
 GameObject:
   m_ObjectHideFlags: 0
@@ -20130,6 +20117,7 @@ GameObject:
   - component: {fileID: 1272457391}
   - component: {fileID: 1272457390}
   - component: {fileID: 1272457389}
+  - component: {fileID: 1272457392}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Manager
@@ -20186,6 +20174,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1272457392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272457388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cbef8e0e9f575459842a9a2bdb9904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1325314134
 GameObject:
   m_ObjectHideFlags: 0
@@ -20720,6 +20720,7 @@ GameObject:
   - component: {fileID: 1450816323}
   - component: {fileID: 1450816319}
   - component: {fileID: 1450816324}
+  - component: {fileID: 1450816325}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -20874,6 +20875,18 @@ MonoBehaviour:
   p: {fileID: 1450816319}
   SSC: {fileID: 1778558011}
   speed: {x: 3, y: 3}
+--- !u!114 &1450816325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450816318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cbef8e0e9f575459842a9a2bdb9904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1545271583
 GameObject:
   m_ObjectHideFlags: 0
@@ -21012,6 +21025,7 @@ GameObject:
   - component: {fileID: 1778558008}
   - component: {fileID: 1778558007}
   - component: {fileID: 1778558011}
+  - component: {fileID: 1778558012}
   m_Layer: 5
   m_Name: StatusScreen
   m_TagString: ForPause
@@ -21124,6 +21138,18 @@ MonoBehaviour:
   currentHealthText: {fileID: 1228237453}
   maxHealthText: {fileID: 0}
   bloodText: {fileID: 1688047305}
+--- !u!114 &1778558012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778558006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cbef8e0e9f575459842a9a2bdb9904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1802826442
 GameObject:
   m_ObjectHideFlags: 0
@@ -24872,6 +24898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1922785272}
   - component: {fileID: 1922785271}
+  - component: {fileID: 1922785273}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Manager
@@ -24906,6 +24933,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1922785273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922785270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cbef8e0e9f575459842a9a2bdb9904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1982469087
 GameObject:
   m_ObjectHideFlags: 0

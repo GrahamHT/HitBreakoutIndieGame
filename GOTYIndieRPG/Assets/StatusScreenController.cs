@@ -15,12 +15,7 @@ public class StatusScreenController : MonoBehaviour
     {
 		p = Player.Instance;
         pauseObjects = GameObject.FindGameObjectsWithTag("ForPause");
-		foreach (GameObject g in pauseObjects)
-		{
-			DontDestroyOnLoad(g);
-		}
 		HidePauseObjects();
-
 	}
 
     // Update is called once per frame
@@ -59,6 +54,7 @@ public class StatusScreenController : MonoBehaviour
 		foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
 		{
 			Destroy(o);
+			Debug.Log("Destroyed " + o.name);
 		}
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}

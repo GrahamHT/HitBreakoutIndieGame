@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
 		else
 		{
 			instance = this;
-			DontDestroyOnLoad(this);
 		}
 	}
 	private void OnTriggerEnter2D(Collider2D collision)

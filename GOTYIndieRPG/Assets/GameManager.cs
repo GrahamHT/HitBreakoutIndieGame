@@ -14,12 +14,6 @@ public class GameManager : MonoBehaviour
         //Instantiate(player, new Vector2(0, 0), Quaternion.identity);
         //GameObject SSC = Resources.Load<GameObject>("StatusScreen") as GameObject;
         //SSC = Instantiate(SSC, new Vector2(0, 0), Quaternion.identity);
-
-        managers = GameObject.FindGameObjectsWithTag("Manager");
-        foreach (GameObject m in managers)
-        {
-            DontDestroyOnLoad(m);
-        }
     }
 
     // Update is called once per frame
