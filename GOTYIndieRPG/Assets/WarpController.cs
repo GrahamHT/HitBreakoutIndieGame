@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WarpManager : MonoBehaviour
+public class WarpController : MonoBehaviour
 {
 	//public Player p;
     public Transform target;
