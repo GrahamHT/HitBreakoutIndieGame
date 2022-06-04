@@ -19605,8 +19605,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 532723220}
-        m_TargetAssemblyTypeName: TestingResetButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 1778558011}
+        m_TargetAssemblyTypeName: StatusScreenController, Assembly-CSharp
         m_MethodName: ResetScene
         m_Mode: 1
         m_Arguments:

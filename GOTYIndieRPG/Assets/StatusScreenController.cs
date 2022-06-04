@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StatusScreenController : MonoBehaviour
@@ -51,6 +52,15 @@ public class StatusScreenController : MonoBehaviour
 		{
 			g.SetActive(false);
 		}
+	}
+
+	public void ResetScene()
+	{
+		foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
+		{
+			Destroy(o);
+		}
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
 }

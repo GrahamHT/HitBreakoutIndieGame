@@ -8,6 +8,13 @@ public class GameManager : MonoBehaviour
     GameObject[] managers;
     void Start()
     {
+        //Resources.Load("Player");
+        //Resources.Load("StatusScreen");
+        //GameObject player = Resources.Load<GameObject>("Player") as GameObject;
+        //Instantiate(player, new Vector2(0, 0), Quaternion.identity);
+        //GameObject SSC = Resources.Load<GameObject>("StatusScreen") as GameObject;
+        //SSC = Instantiate(SSC, new Vector2(0, 0), Quaternion.identity);
+
         managers = GameObject.FindGameObjectsWithTag("Manager");
         foreach (GameObject m in managers)
         {
