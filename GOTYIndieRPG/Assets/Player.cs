@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
 	private static Player instance;
 	public static Player Instance { get { return instance; } }
 
-	private SpriteRenderer SR;
+	public SpriteRenderer SR;
+	public CollisionHandler CH;
 
 	public string charName = "Pepeg";
 	public int maxHP = 50;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
 	private void Start()
 	{
 		SR = GetComponent<SpriteRenderer>();
+		CH = GetComponent<CollisionHandler>();
 
 		if (instance != null && instance != this)
 		{
@@ -31,30 +33,6 @@ public class Player : MonoBehaviour
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		Vector2 lastPosition = transform.position;
-		if (collision.gameObject.tag == "Enemy")
-		{
-			SceneManager.LoadScene("Battle");
-			//onSceneLoad();
-			transform.position = new Vector2(0, 0);
-		}
-		else if (collision.gameObject.tag == "Warp")
-		{
-			SceneManager.LoadScene("Overworld");
-			//onSceneLoad();
-			Vector2 newPosition = new Vector2(lastPosition.x + 3, lastPosition.y);
-			transform.position = newPosition;
-		}
-		else if (collision.gameObject.tag == "Flipper")
-		{
-			if (SR.flipY == true)
-			{
-				SR.flipY = false;
-			}
-			else
-			{
-				SR.flipY = true;
-			}
-		}
+		CH.handleCollision(collision);
 	}
 }

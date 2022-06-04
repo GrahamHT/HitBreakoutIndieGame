@@ -9,6 +9,8 @@ TagManager:
   - Flipper
   - ForPause
   - Manager
+  - LocalWarp
+  - GlobalWarp
   layers:
   - Default
   - TransparentFX
