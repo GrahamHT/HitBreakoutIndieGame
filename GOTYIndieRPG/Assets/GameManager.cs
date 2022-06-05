@@ -6,20 +6,22 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
-
-    public static GameManager Instance
+    public static GameManager Instance { get { return instance; } }
+    private void Awake()
     {
-        get
+        if (instance != null && instance != this)
         {
-            if (instance == null)
-            {
-                instance = GameObject.FindObjectOfType<GameManager>();
-            }
-            return instance;
+            Debug.Log("destroying fake gameManager");
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Debug.Log("returning existing gamemanager");
+            instance = this;
         }
     }
 
-	void Start()
+    void Start()
     {
         //Resources.Load("Player");
         //Resources.Load("StatusScreen");

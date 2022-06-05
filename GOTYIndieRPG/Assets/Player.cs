@@ -7,17 +7,19 @@ using System.Reflection;
 public class Player : MonoBehaviour
 {
 	private static Player instance;
-	public static Player Instance
+	public static Player Instance { get { return instance; } }
+
+	private void Awake()
 	{
-		get
+		if (instance != null && instance != this)
 		{
-			if (instance == null)
-			{
-				Debug.Log("Creating new player instance");
-				instance = GameObject.FindObjectOfType<Player>();
-			}
-			Debug.Log("Returning existing player instance");
-			return instance;
+			Debug.Log("destroying fake player");
+			Destroy(this.gameObject);
+		}
+		else
+		{
+			Debug.Log("returning existing player");
+			instance = this;
 		}
 	}
 
@@ -30,20 +32,6 @@ public class Player : MonoBehaviour
 	public int blood = 35;
 
 	public bool isPaused = false;
-	private void Start()
-	{
-		SR = GetComponent<SpriteRenderer>();
-		CH = GetComponent<CollisionHandler>();
-
-		if (instance != null && instance != this)
-		{
-			Destroy(this);
-		}
-		else
-		{
-			instance = this;
-		}
-	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		CH.handleCollision(collision);

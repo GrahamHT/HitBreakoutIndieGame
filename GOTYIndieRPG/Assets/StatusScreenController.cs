@@ -5,15 +5,27 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StatusScreenController : MonoBehaviour
-
 {
-	public Player p;
+	private static StatusScreenController instance;
+	public static StatusScreenController Instance { get { return instance; } }
+	private void Awake()
+	{
+		if (instance != null && instance != this)
+		{
+			Debug.Log("destroying fake SSC");
+			Destroy(this.gameObject);
+		}
+		else
+		{
+			Debug.Log("returning existing SSC");
+			instance = this;
+		}
+	}
 	public Text charNameText, currentHealthText, maxHealthText, bloodText;
     GameObject[] pauseObjects;
     // Start is called before the first frame update
     void Start()
     {
-		//p = Player.Instance;
         pauseObjects = GameObject.FindGameObjectsWithTag("ForPause");
 		HidePauseObjects();
 	}
@@ -28,10 +40,10 @@ public class StatusScreenController : MonoBehaviour
 	{
 		Time.timeScale = 0f;
 		AudioListener.pause = true;
-		charNameText.text = p.charName;
-		currentHealthText.text = p.currentHP.ToString() + "/" + p.maxHP.ToString();
-		//maxHealthText.text = p.maxHP.ToString();
-		bloodText.text = p.blood.ToString();
+		charNameText.text = Player.Instance.charName;
+		currentHealthText.text = Player.Instance.currentHP.ToString() + "/" + Player.Instance.maxHP.ToString();
+		//maxHealthText.text = Player.Instance.maxHP.ToString();
+		bloodText.text = Player.Instance.blood.ToString();
 
 		foreach (GameObject g in pauseObjects)
 		{
@@ -53,10 +65,15 @@ public class StatusScreenController : MonoBehaviour
 	{
 		foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
 		{
-			Destroy(o);
-			Debug.Log("Destroyed " + o.name);
+			if((gameObject.GetComponent("DDOL") as DDOL) == null)
+			{
+				Destroy(o);
+				Debug.Log("Destroyed " + o.name);
+			}
 		}
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		Player.Instance.gameObject.transform.position = new Vector2(0, 0);
+		this.gameObject.transform.position = new Vector2(0, 0);
 	}
 
 }
