@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	public StatusScreenController SSC;
-	public Vector2 speed = new Vector2(3,3);
+	public Vector2 speed = new Vector2(3, 3);
+
 	public void Update()
 	{
 		if (Input.GetButtonDown("Interact"))
@@ -18,12 +18,12 @@ public class PlayerController : MonoBehaviour
 			if (Player.Instance.isPaused)
 			{
 				Player.Instance.isPaused = false;
-				SSC.HidePauseObjects();
+				StatusScreenController.Instance.HidePauseObjects();
 			}
 			else
 			{
 				Player.Instance.isPaused = true;
-				SSC.ShowPauseObjects();
+				StatusScreenController.Instance.ShowPauseObjects();
 			}
 		}
 

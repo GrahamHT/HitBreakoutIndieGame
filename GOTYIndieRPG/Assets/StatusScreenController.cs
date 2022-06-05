@@ -26,7 +26,7 @@ public class StatusScreenController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pauseObjects = GameObject.FindGameObjectsWithTag("ForPause");
+		pauseObjects = GameObject.FindGameObjectsWithTag("ForPause");
 		HidePauseObjects();
 	}
 
@@ -65,6 +65,7 @@ public class StatusScreenController : MonoBehaviour
 	{
 		foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
 		{
+			Debug.Log("Checking for DDOL");
 			if((gameObject.GetComponent("DDOL") as DDOL) == null)
 			{
 				Destroy(o);
@@ -73,6 +74,7 @@ public class StatusScreenController : MonoBehaviour
 		}
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		Player.Instance.gameObject.transform.position = new Vector2(0, 0);
+		StatusScreenController.Instance.gameObject.transform.position = new Vector2(0, 0);
 		this.gameObject.transform.position = new Vector2(0, 0);
 	}
 
