@@ -2,11 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Reflection;
 
 public class Player : MonoBehaviour
 {
 	private static Player instance;
-	public static Player Instance { get { return instance; } }
+	public static Player Instance
+	{
+		get
+		{
+			if (instance == null)
+			{
+				Debug.Log("Creating new player instance");
+				instance = GameObject.FindObjectOfType<Player>();
+			}
+			Debug.Log("Returning existing player instance");
+			return instance;
+		}
+	}
 
 	public SpriteRenderer SR;
 	public CollisionHandler CH;

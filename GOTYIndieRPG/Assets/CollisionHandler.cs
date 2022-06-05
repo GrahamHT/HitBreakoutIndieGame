@@ -5,15 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-	public Player p;
 	public WarpController WC;
-    // Start is called before the first frame update
     void Start()
     {
 		WC = GetComponent<WarpController>();
 	}
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -32,17 +29,6 @@ public class CollisionHandler : MonoBehaviour
 		{
 			WarpController targetWC = collision.gameObject.GetComponent(typeof(WarpController)) as WarpController;
 			targetWC.WarpPlayer(collision);
-		}
-		else if (collision.gameObject.tag == "Flipper")
-		{
-			if (p.SR.flipY == true)
-			{
-				p.SR.flipY = false;
-			}
-			else
-			{
-				p.SR.flipY = true;
-			}
 		}
 	}
 }

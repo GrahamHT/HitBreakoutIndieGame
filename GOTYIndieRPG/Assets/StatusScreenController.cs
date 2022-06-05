@@ -13,7 +13,7 @@ public class StatusScreenController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		p = Player.Instance;
+		//p = Player.Instance;
         pauseObjects = GameObject.FindGameObjectsWithTag("ForPause");
 		HidePauseObjects();
 	}

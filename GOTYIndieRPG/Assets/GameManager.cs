@@ -5,8 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    GameObject[] managers;
-    void Start()
+    private static GameManager instance;
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<GameManager>();
+            }
+            return instance;
+        }
+    }
+
+	void Start()
     {
         //Resources.Load("Player");
         //Resources.Load("StatusScreen");
@@ -34,6 +47,6 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
+        Debug.Log("Loaded scene: " + scene.name);
     }
 }
